@@ -5,7 +5,7 @@ import App from "./App";
 const wrapper = mount(<App />);
 
 describe("App", () => {
-  it("updates the select input when an option is clicked", async () => {
+  it("updates the select input value when an option is clicked", async () => {
     expect(wrapper.find(".ant-select-selection-item")).toHaveText("Lucy");
 
     wrapper.find(".ant-select-selector").simulate("mousedown");

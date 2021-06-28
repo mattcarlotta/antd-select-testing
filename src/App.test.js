@@ -12,7 +12,7 @@ describe("App", () => {
 
     await waitForAct(() => {
       wrapper.update();
-      expect(wrapper.find(".ant-select-item").length).toEqual(4);
+      expect(wrapper.find(".ant-select-item")).toHaveLength(4);
     });
 
     wrapper.find(".ant-select-item").first().simulate("click");

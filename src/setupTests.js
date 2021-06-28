@@ -7,7 +7,6 @@ import "jest-enzyme";
 configure({ adapter: new Adapter() });
 
 /* THE BELOW ARE ACCESSIBLE AND PREDEFINED FOR ALL *.TEST.JS FILES */
-
 const { document } = new JSDOM(
   "<!DOCTYPE html><body><div id='root'></div></body>"
 ).window;
@@ -16,6 +15,8 @@ global.window = document.defaultView;
 global.HTMLElement = window.HTMLElement;
 global.HTMLAnchorElement = window.HTMLAnchorElement;
 global.React = React;
+global.requestAnimationFrame = (callback) => setTimeout(callback, 0);
+global.cancelAnimationFrame = (id) => clearTimeout(id);
 
 global.navigator = {
   userAgent: "node.js",
